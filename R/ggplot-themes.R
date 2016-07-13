@@ -13,7 +13,7 @@ theme_nyt <- function(..., flip = FALSE){
 theme_mod <- function(..., flip = FALSE){
   dotted_line <- element_line(color = "#2b2b2b", linetype = "dotted", size = 0.15)
   solid_line <- element_line(color = "#2b2b2b", size = 0.15)
-  mytheme <- theme(
+  mytheme_elems <- list(
     legend.position = "right",
     legend.justification = c(0,1),
     legend.text = element_text(size = 8, face = "bold"),
@@ -31,12 +31,10 @@ theme_mod <- function(..., flip = FALSE){
     axis.line = element_line(size = 0.15),
     axis.line.x = if (flip) element_blank() else solid_line,
     axis.line.y = if (!flip) element_blank() else solid_line,
-    plot.title = element_text(face = "bold")
+    plot.title = element_text(face = "bold"),
+    plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 15))
     )
-  if (.pkgEnv$ggplot2_extended) {
-    mytheme <- mytheme + theme(
-      plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 15))
-    )
-  }
-  mytheme
+  valid_elems <- ggplot2:::.element_tree %>% names %>%
+    intersect(names(mytheme_elems))
+  invoke(ggplot2::theme, mytheme_elems[valid_elems])
 }

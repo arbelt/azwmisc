@@ -2,6 +2,6 @@
 
 
 .onLoad <- function(libname, pkgname){
-  .pkgEnv$ggplot2_extended <- exists("plot.caption", ggplot2::theme_minimal())
+  ## .pkgEnv$ggplot2_extended <- exists("plot.caption", ggplot2::theme_minimal())
   invisible()
 }
