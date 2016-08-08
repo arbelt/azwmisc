@@ -3,6 +3,7 @@
 export(nicify_names)
 export(theme_mod)
 export(theme_nyt)
+export(theme_nyt_)
 import(ggplot2)
 importFrom(dplyr,"%>%")
 importFrom(purrr,invoke)

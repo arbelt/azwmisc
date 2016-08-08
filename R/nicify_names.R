@@ -2,6 +2,9 @@
 #'
 #' @importFrom stringr str_replace_all
 #' @importFrom dplyr %>%
+#' @param df Dataframe
+#' @param lowercase Whether to lowercase names or not
+#' @param abbrev Unused.
 #' @export
 nicify_names <- function(df, lowercase = TRUE, abbrev = FALSE){
   names(df) <- names(df) %>%

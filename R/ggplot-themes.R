@@ -1,6 +1,8 @@
 #' NYT ggplot theme
 #'
 #' @import ggplot2
+#' @inheritParams theme_nyt_
+#' @param ... Parameters passed to \code{theme_minimal}
 #' @export
 theme_nyt <- function(..., flip = FALSE){
   my_theme <- theme_minimal(...)
@@ -10,7 +12,9 @@ theme_nyt <- function(..., flip = FALSE){
 #' Partial NYT theme
 #'
 #' @export
-theme_mod <- function(..., flip = FALSE){
+#' @param flip Whether to flip the axes
+#' @param ... Unused.
+theme_nyt_ <- function(..., flip = FALSE){
   dotted_line <- element_line(color = "#2b2b2b", linetype = "dotted", size = 0.15)
   solid_line <- element_line(color = "#2b2b2b", size = 0.15)
   mytheme_elems <- list(
@@ -38,3 +42,7 @@ theme_mod <- function(..., flip = FALSE){
     intersect(names(mytheme_elems))
   invoke(ggplot2::theme, mytheme_elems[valid_elems])
 }
+
+#' @export
+#' @rdname theme_nyt_
+theme_mod <- theme_nyt_

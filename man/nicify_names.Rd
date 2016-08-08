@@ -6,6 +6,13 @@
 \usage{
 nicify_names(df, lowercase = TRUE, abbrev = FALSE)
 }
+\arguments{
+\item{df}{Dataframe}
+
+\item{lowercase}{Whether to lowercase names or not}
+
+\item{abbrev}{Unused.}
+}
 \description{
 Nicify names
 }

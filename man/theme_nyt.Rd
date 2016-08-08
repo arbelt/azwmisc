@@ -6,6 +6,11 @@
 \usage{
 theme_nyt(..., flip = FALSE)
 }
+\arguments{
+\item{...}{Parameters passed to \code{theme_minimal}}
+
+\item{flip}{Whether to flip the axes}
+}
 \description{
 NYT ggplot theme
 }
