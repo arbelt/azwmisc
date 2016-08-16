@@ -42,7 +42,3 @@ theme_nyt_ <- function(..., flip = FALSE){
     intersect(names(mytheme_elems))
   invoke(ggplot2::theme, mytheme_elems[valid_elems])
 }
-
-#' @export
-#' @rdname theme_nyt_
-theme_mod <- theme_nyt_
