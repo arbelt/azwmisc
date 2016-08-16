@@ -1,5 +1,9 @@
 #' NYT ggplot theme
 #'
+#' Complete theme based on \code{theme_minimal} that applies NYT-style. Font to
+#' be used should be specified as \code{base_family}.
+#'
+#' Original post at \url{http://rud.is/b/2016/03/16/supreme-annotations/}
 #' @import ggplot2
 #' @inheritParams theme_nyt_
 #' @param ... Parameters passed to \code{theme_minimal}
@@ -11,6 +15,7 @@ theme_nyt <- function(..., flip = FALSE){
 
 #' Partial NYT theme
 #'
+#' Partial theme that applies NYT-style modifications.
 #' @export
 #' @param flip Whether to flip the axes
 #' @param ... Unused.
@@ -36,6 +41,7 @@ theme_nyt_ <- function(..., flip = FALSE){
     axis.line.x = if (flip) element_blank() else solid_line,
     axis.line.y = if (!flip) element_blank() else solid_line,
     plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(face = "italic"),
     plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 15))
     )
   valid_elems <- ggplot2:::.element_tree %>% names %>%
