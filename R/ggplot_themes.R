@@ -10,7 +10,7 @@
 #' @export
 theme_nyt <- function(..., flip = FALSE){
   my_theme <- theme_minimal(...)
-  my_theme + theme_mod(flip = flip)
+  my_theme + theme_nyt_(flip = flip)
 }
 
 #' Partial NYT theme
