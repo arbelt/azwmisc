@@ -7,11 +7,17 @@
 #' @param abbrev Unused.
 #' @export
 nicify_names <- function(df, lowercase = TRUE, abbrev = FALSE){
-  names(df) <- names(df) %>%
+  newnames <- names(df)
+  if (abbrev){
+    newnames <- newnames %>%
+      str_replace("%", " pct ")
+  }
+  newnames <- newnames %>%
     do_if(lowercase, tolower) %>%
     str_replace_all("[^A-Za-z0-9]+", "_") %>%
     str_replace_all("^_+|_+$", "") %>%
     make.names(unique = TRUE, allow_ = TRUE)
+  names(df) <- newnames
   df
 }
 
