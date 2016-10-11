@@ -7,6 +7,8 @@
 #' @import ggplot2
 #' @inheritParams theme_nyt_
 #' @param ... Parameters passed to \code{theme_minimal}
+#' @param flip If \code{TRUE}, flips the coordinates so the grid lines go
+#'   vertically.
 #' @export
 theme_nyt <- function(..., flip = FALSE){
   my_theme <- theme_minimal(...)
@@ -47,4 +49,35 @@ theme_nyt_ <- function(..., flip = FALSE){
   valid_elems <- ggplot2:::.element_tree %>% names %>%
     intersect(names(mytheme_elems))
   invoke(ggplot2::theme, mytheme_elems[valid_elems])
+}
+
+#' Partial H theme
+#'
+#' Slightly modified version of \code{theme_nyt_}. Adds additional spacing under
+#' title and subtitle elements; title is not bold and is colored
+#' @export
+theme_h_ <- function(..., flip = FALSE){
+  mytheme_elems <- list(
+      plot.title = element_text(colour = "#A51C30",
+                                size = 18,
+                                face = "plain",
+                                margin = margin(b = unit(10, "mm"))),
+      plot.subtitle = element_text(margin = margin(b = unit(10, "mm"))))
+  valid_elems <- ggplot2:::.element_tree %>% names %>%
+    intersect(names(mytheme_elems))
+  theme_nyt_(..., flip = flip) +
+    invoke(ggplot2::theme, mytheme_elems)
+}
+
+#' H ggplot theme
+#'
+#' Complete H theme.
+#'
+#' @param ... Arguments passed to \code{theme_minimal}
+#' @param flip If \code{TRUE}, flips the coordinates so the grid lines go
+#'   vertically.
+#' @export
+theme_h <- function(..., flip = FALSE){
+  my_theme <- theme_minimal(...)
+  my_theme + theme_h_(flip = flip)
 }

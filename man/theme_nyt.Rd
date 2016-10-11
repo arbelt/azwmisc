@@ -9,7 +9,8 @@ theme_nyt(..., flip = FALSE)
 \arguments{
 \item{...}{Parameters passed to \code{theme_minimal}}
 
-\item{flip}{Whether to flip the axes}
+\item{flip}{If \code{TRUE}, flips the coordinates so the grid lines go
+vertically.}
 }
 \description{
 Complete theme based on \code{theme_minimal} that applies NYT-style. Font to
