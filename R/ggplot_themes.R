@@ -5,10 +5,10 @@
 #'
 #' Original post at \url{http://rud.is/b/2016/03/16/supreme-annotations/}
 #' @import ggplot2
-#' @inheritParams theme_nyt_
 #' @param ... Parameters passed to \code{theme_minimal}
 #' @param flip If \code{TRUE}, flips the coordinates so the grid lines go
 #'   vertically.
+#'
 #' @export
 theme_nyt <- function(..., flip = FALSE){
   my_theme <- theme_minimal(...)
@@ -21,6 +21,7 @@ theme_nyt <- function(..., flip = FALSE){
 #' @export
 #' @param flip Whether to flip the axes
 #' @param ... Unused.
+#'
 theme_nyt_ <- function(..., flip = FALSE){
   dotted_line <- element_line(color = "#2b2b2b", linetype = "dotted", size = 0.15)
   solid_line <- element_line(color = "#2b2b2b", size = 0.15)
@@ -55,6 +56,8 @@ theme_nyt_ <- function(..., flip = FALSE){
 #'
 #' Slightly modified version of \code{theme_nyt_}. Adds additional spacing under
 #' title and subtitle elements; title is not bold and is colored
+#'
+#' @inheritParams theme_nyt_
 #' @export
 theme_h_ <- function(..., flip = FALSE){
   mytheme_elems <- list(

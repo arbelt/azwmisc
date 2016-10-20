@@ -6,6 +6,11 @@
 \usage{
 theme_h_(..., flip = FALSE)
 }
+\arguments{
+\item{...}{Unused.}
+
+\item{flip}{Whether to flip the axes}
+}
 \description{
 Slightly modified version of \code{theme_nyt_}. Adds additional spacing under
 title and subtitle elements; title is not bold and is colored

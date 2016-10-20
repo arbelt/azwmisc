@@ -1,6 +1,6 @@
 #' Nicify names
 #'
-#' @importFrom stringr str_replace_all
+#' @importFrom stringr str_replace_all str_replace
 #' @importFrom dplyr %>%
 #' @param df Dataframe
 #' @param lowercase Whether to lowercase names or not
