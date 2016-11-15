@@ -47,9 +47,7 @@ theme_nyt_ <- function(..., flip = FALSE){
     plot.subtitle = element_text(face = "italic"),
     plot.caption = element_text(size = 8, hjust = 0, margin = margin(t = 15))
     )
-  valid_elems <- ggplot2:::.element_tree %>% names %>%
-    intersect(names(mytheme_elems))
-  invoke(ggplot2::theme, mytheme_elems[valid_elems])
+  invoke(ggplot2::theme, mytheme_elems)
 }
 
 #' Partial H theme
@@ -66,8 +64,6 @@ theme_h_ <- function(..., flip = FALSE){
                                 face = "plain",
                                 margin = margin(b = unit(10, "mm"))),
       plot.subtitle = element_text(margin = margin(b = unit(10, "mm"))))
-  valid_elems <- ggplot2:::.element_tree %>% names %>%
-    intersect(names(mytheme_elems))
   theme_nyt_(..., flip = flip) +
     invoke(ggplot2::theme, mytheme_elems)
 }
