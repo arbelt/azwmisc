@@ -15,4 +15,3 @@ theme_h_(..., flip = FALSE)
 Slightly modified version of \code{theme_nyt_}. Adds additional spacing under
 title and subtitle elements; title is not bold and is colored
 }
-

@@ -14,4 +14,3 @@ theme_nyt_(..., flip = FALSE)
 \description{
 Partial theme that applies NYT-style modifications.
 }
-

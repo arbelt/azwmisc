@@ -18,4 +18,3 @@ geom_lbl(..., family = theme_get()$text$family, size = 3, label.size = 0)
 \description{
 Helper for \code{geom_label} with some defaults.
 }
-

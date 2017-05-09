@@ -15,4 +15,3 @@ vertically.}
 \description{
 Complete H theme.
 }
-

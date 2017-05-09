@@ -19,4 +19,3 @@ geom_txt(..., family = theme_get()$text$family, size = 3,
 \description{
 Helper for \code{geom_text} with some defaults.
 }
-

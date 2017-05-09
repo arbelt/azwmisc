@@ -19,4 +19,3 @@ be used should be specified as \code{base_family}.
 \details{
 Original post at \url{http://rud.is/b/2016/03/16/supreme-annotations/}
 }
-

@@ -4,16 +4,15 @@
 \alias{nicify_names}
 \title{Nicify names}
 \usage{
-nicify_names(df, lowercase = TRUE, abbrev = FALSE)
+nicify_names(df, style = c("snake_case"), abbrev = FALSE)
 }
 \arguments{
 \item{df}{Dataframe}
 
-\item{lowercase}{Whether to lowercase names or not}
+\item{style}{Naming style convention.  Currently only 'snake_case' is supported.}
 
-\item{abbrev}{Unused.}
+\item{abbrev}{Logical. Whether to use common abbreviations such as 'pct' for '\%'}
 }
 \description{
 Nicify names
 }
-
