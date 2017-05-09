@@ -13,7 +13,7 @@ nicify_names <- function(df, style = c("snake_case"), abbrev = FALSE){
       str_replace("%", " pct ")
   }
   newnames <- newnames %>%
-    do_if(lowercase, tolower) %>%
+    ## do_if(lowercase, tolower) %>%
     sep_words_all %>%
     words_to_snake %>%
     make.names(unique = TRUE, allow_ = TRUE)
