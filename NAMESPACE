@@ -2,6 +2,7 @@
 
 export(geom_lbl)
 export(geom_txt)
+export(h_colors)
 export(nicify_names)
 export(theme_h)
 export(theme_h_)

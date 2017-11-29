@@ -1,6 +1,6 @@
 Package: azwmisc
 Title: Miscellaneous utility functions
-Version: 0.0.1.900
+Version: 0.0.1.901
 Authors@R: person("Albert", "Wang", email = "albert.zhao.wang@gmail.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
 Depends:
