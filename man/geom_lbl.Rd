@@ -4,7 +4,8 @@
 \alias{geom_lbl}
 \title{geom_lbl}
 \usage{
-geom_lbl(..., family = theme_get()$text$family, size = 3, label.size = 0)
+geom_lbl(..., family = theme_get()$text$family, size = 3,
+  label.size = 0)
 }
 \arguments{
 \item{...}{Additional parameters passed to \code{geom_label}}

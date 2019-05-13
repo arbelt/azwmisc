@@ -28,7 +28,7 @@ theme_nyt_ <- function(..., flip = FALSE){
   mytheme_elems <- list(
     legend.position = "right",
     legend.justification = c(0,1),
-    legend.text = element_text(size = 8, face = "bold"),
+    legend.text = element_text(size = 8, face = "plain"),
     legend.key.size = unit(3, "mm"),
     plot.margin = unit(rep(0.5,4), "cm"),
     panel.grid = element_line(),
