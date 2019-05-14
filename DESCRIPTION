@@ -1,6 +1,6 @@
 Package: azwmisc
 Title: Miscellaneous utility functions
-Version: 0.0.1.902
+Version: 0.0.1.903
 Authors@R: person("Albert", "Wang", email = "albert.zhao.wang@gmail.com", role = c("aut", "cre"))
 Description: Miscellaneous helpers.
 Depends:
@@ -10,12 +10,11 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 Imports: 
-    ggplot2 (>= 2.2.0),
-    dplyr,
-    purrr,
-    stringr,
+    ggplot2 (>= 3.1.0),
+    magrittr,
+    purrr (>= 0.3.0),
+    rlang (>= 0.3.0),
     stringi,
-    wrapr,
     Rcpp
 LinkingTo: 
     Rcpp

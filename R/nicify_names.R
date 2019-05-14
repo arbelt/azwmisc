@@ -1,7 +1,7 @@
 #' Nicify names
 #'
-#' @importFrom stringr str_replace_all str_replace
-#' @importFrom dplyr %>%
+#' @importFrom stringi stri_replace_all_fixed
+#' @importFrom magrittr %>%
 #' @param df Dataframe
 #' @param style Naming style convention.  Currently only 'snake_case' is supported.
 #' @param abbrev Logical. Whether to use common abbreviations such as 'pct' for '\%'
@@ -10,7 +10,7 @@ nicify_names <- function(df, style = c("snake_case"), abbrev = FALSE){
   newnames <- names(df)
   if (abbrev){
     newnames <- newnames %>%
-      str_replace("%", " pct ")
+      stri_replace_all_fixed("%", " pct ")
   }
   newnames <- newnames %>%
     ## do_if(lowercase, tolower) %>%
@@ -21,10 +21,10 @@ nicify_names <- function(df, style = c("snake_case"), abbrev = FALSE){
   df
 }
 
-#' @importFrom purrr invoke
+#' @importFrom rlang exec
 do_if <- function(.x, .p, .f){
   my_f <- if (isTRUE(.p)) .f else identity
-  invoke(my_f, list(.x))
+  exec(my_f, .x)
 }
 
 #' @importFrom stringi stri_replace_all_regex stri_split_regex
@@ -55,8 +55,8 @@ sep_words_all <- function(x){
     map(~ discard(.x, ~ nchar(.x) < 1))
 }
 
-#' @importFrom stringr str_c
+#' @importFrom stringi stri_c
 words_to_snake <- function(x){
   x %>% map(tolower) %>%
-    map(~ str_c(.x, collapse="_"))
+    map(~ stri_c(.x, collapse="_"))
 }

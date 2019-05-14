@@ -19,10 +19,10 @@ bit_count <- function(x){
 #' Get the index of the rightmost bit (starting at 1). Returns 0 if no bits set.
 #'
 #' @export
-#' @importFrom wrapr %.>%
+#' @importFrom magrittr %>%
 bit_right <- function(x){
   mask <- bitwAnd(x, bitwNot(x-1))
-  log2(mask) %.>% ifelse(. < 0, 0, . + 1)
+  log2(mask) %>% {ifelse(. < 0, 0, . + 1)}
 }
 
 
@@ -42,4 +42,3 @@ bit_to_set <- function(x){
   }
   .result %>% map(~ log2(.) + 1)
 }
-
