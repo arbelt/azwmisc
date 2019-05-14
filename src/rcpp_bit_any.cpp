@@ -6,6 +6,7 @@ using namespace Rcpp;
 //'
 //' Aggregate integer vector using bitwise or.
 //'
+//' @export
 // [[Rcpp::export]]
 int bit_any(IntegerVector xs){
   int out = 0;

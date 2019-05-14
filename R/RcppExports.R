@@ -5,6 +5,7 @@
 #'
 #' Aggregate integer vector using bitwise or.
 #'
+#' @export
 bit_any <- function(xs) {
     .Call(`_azwmisc_bit_any`, xs)
 }
