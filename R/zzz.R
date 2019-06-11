@@ -5,3 +5,7 @@
   ## .pkgEnv$ggplot2_extended <- exists("plot.caption", ggplot2::theme_minimal())
   invisible()
 }
+
+.onUnload <- function(libpath) {
+  library.dynam.unload("azwmisc", libpath)
+}
