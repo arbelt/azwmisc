@@ -33,3 +33,18 @@ geom_lbl <- function(...,
                      label.size = 0){
   geom_label(..., family = family, size = size, label.size = label.size)
 }
+
+#' @importFrom wrapr apply_left
+#' @method apply_left gg
+#' @export
+apply_left.gg <- function(pipe_left_arg,
+                          pipe_right_arg,
+                          pipe_environment,
+                          left_arg_name,
+                          pipe_string,
+                          right_arg_name){
+  pipe_right_arg <- eval(pipe_right_arg,
+                         envir = pipe_environment,
+                         enclos = pipe_environment)
+  pipe_left_arg + pipe_right_arg
+}
